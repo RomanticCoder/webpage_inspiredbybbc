@@ -12,6 +12,22 @@
         window.scrollTo(0,0);
 
 });
+const actions = {
+    cpEating(){
+        const pic = document.querySelector('[data-index="3"] .scene-img').getBoundingClientRect();
+
+        const x = pic.x;
+        const y = pic.y;
+
+        const cater = document.querySelector('[data-index="3"] .caterpillar');
+        cater.style.left = x;
+        cater.style.top = y;
+
+        const movingWidth = (cater.width)*-0.3+"px";
+        cater.style.transform = `translateX(${movingWidth})`;
+    }
+}
+
     activate();
 
     for(let i = 0; i < stepElems.length; i++){
@@ -21,8 +37,11 @@
 
     }
 
-    function activate(){
+    function activate(action){
         currentItem.classList.add('visible');
+        if(action){
+            actions[action]();
+        }
     }
 
     function inactivate(){

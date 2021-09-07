@@ -38,7 +38,6 @@ img {
 .graphic-item {
   display: flex;
   justify-content: center;
-  align-items: center;
   position: absolute;
   left: 0;
   top: 0;
@@ -53,8 +52,22 @@ img {
   opacity: 1;
 }
 
+.graphic-item.moving {
+  display: relative;
+}
+
 .scene-img {
   max-height: 100vh;
+}
+
+.bigger {
+  transform: scale(1.2) translate(-200px, -100px);
+}
+.caterpillar {
+  position: absolute;
+  z-index: 9;
+  height: 100%;
+  transition: all 2s linear;
 }
 
 .scroll-text {
@@ -91,4 +104,8 @@ img {
 
 .strikethrough {
   text-decoration: line-through;
+}
+
+.text-content {
+  margin: 100px;
 }
